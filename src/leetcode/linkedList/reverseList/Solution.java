@@ -9,6 +9,7 @@ import java.util.Stack;
  * @create 2018-05-24 17:54
  **/
 public class Solution {
+    //todo 递归反转 反转链表
     public ListNode reverseList2(ListNode head) {
         if(head==null||head.next==null) {
             return head;
