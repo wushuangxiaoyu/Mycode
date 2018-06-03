@@ -7,11 +7,11 @@ package leetcode.tree.treeNode;
  * @create 2018-05-27 21:11
  **/
 public class TreeNode {
-    int val;
+    public int val;
     public TreeNode left;
     public TreeNode right;
 
-    TreeNode(int x) {
+    public TreeNode(int x) {
         val = x;
     }
 }
