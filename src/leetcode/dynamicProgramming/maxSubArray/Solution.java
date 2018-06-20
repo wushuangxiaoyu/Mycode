@@ -6,4 +6,5 @@ package leetcode.dynamicProgramming.maxSubArray;
  * @create 2018-06-17 17:18
  **/
 public class Solution {
+
 }
