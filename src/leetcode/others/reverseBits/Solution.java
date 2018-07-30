@@ -17,6 +17,17 @@ public class Solution {
         return Integer.parseUnsignedInt(sb.toString(), 2);
     }
 
+    /**
+     * @Description: leetcode
+     */
+    public int reverseBits3(int n) {
+        int count = 0;
+        for(int i = 31;i >= 0;i--){
+            count = (n >>> i & 1) << (31-i) | count;
+        }
+        return count;
+    }
+
     //leetcode
     public int reverseBits2(int n) {
         int res=0;

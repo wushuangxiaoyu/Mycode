@@ -37,8 +37,8 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{-7,-8,7,5,7,1,6,0};
-        int[] ints = maxSlidingWindow(nums, 4);
+        int[] nums = new int[]{1,2,3,1};
+        int[] ints = maxSlidingWindow(nums, 3);
 
     }
 }

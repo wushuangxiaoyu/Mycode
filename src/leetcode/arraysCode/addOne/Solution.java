@@ -2,6 +2,7 @@ package leetcode.arraysCode.addOne;
 
 
 import java.util.Arrays;
+import java.util.Hashtable;
 
 /**
  * 给定一个非负整数组成的非空数组，在该数的基础上加一，返回一个新的数组。
