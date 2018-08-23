@@ -9,6 +9,11 @@ import java.util.Arrays;
  * @create 2018-07-29 8:54
  **/
 public class Solution {
+
+    public static void main(String[] args) {
+        System.out.println(maxGap(new int[]{-90,-72,-63,55,-40,-33,-32,31,19,-8,2,10,30,47}));
+        System.out.println(comparator(new int[]{-90,-72,-63,55,-40,-33,-32,31,19,-8,2,10,30,47}));
+    }
     public static int maxGap(int[] nums) {
         if (nums == null || nums.length < 2) {
             return 0;
@@ -45,8 +50,6 @@ public class Solution {
         }
         return res;
     }
-
-
 
     private static int bucket(long num, long len, long min, long max) {
         return (int) ((num - min) * len / (max - min));
@@ -87,23 +90,20 @@ public class Solution {
     }
 
     // for test
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         int testTime = 500000;
         int maxSize = 100;
         int maxValue = 100;
         boolean succeed = true;
         for (int i = 0; i < testTime; i++) {
             int[] arr1 = generateRandomArray(maxSize, maxValue);
-            int[] arr2 = copyArray(arr1);
-            int x = maxGap(arr1);
-            System.out.println(x);
-            int y = comparator(arr2);
-            System.out.println(y);
-            if (x != y) {
+            int[] arr2 = arr1.clone();
+            if (maxGap(arr1) != comparator(arr2)) {
                 succeed = false;
                 break;
             }
         }
         System.out.println(succeed ? "Nice!" : "Fucking fucked!");
-    }
+    }*/
+
 }

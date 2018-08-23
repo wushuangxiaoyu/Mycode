@@ -10,55 +10,21 @@ import org.omg.PortableInterceptor.INACTIVE;
  * @create 2018-07-28 20:27
  **/
 public class Solution {
-    public int divide(int dividend, int divisor) {
-        if (dividend == 0) {
-            return 0;
-        }
-        if (dividend == Integer.MIN_VALUE && divisor == -1) {
-            return Integer.MAX_VALUE;
-        }
-        if (dividend > 0) {
-            if (divisor > 0) {
-                int i = 0;
-                while (dividend >= divisor) {
-                    dividend = dividend - divisor;
-                    i++;
-                }
-                return i;
+    public static int divide(int A, int B) {
+        if (A == 1 << 31 && B == -1) return (1 << 31) - 1;
+        int a = Math.abs(A), b = Math.abs(B), res = 0;
+        for (int x = 31; x >= 0; x--)
+            if ((a >>> x) - b >= 0) {
+                res += 1 << x;
+                a -= b << x;
             }
-            if (divisor < 0) {
-                int i = 0;
-                divisor = -divisor;
-                while (dividend >= divisor) {
-                    dividend = dividend - divisor;
-                    i++;
-                }
-                return -i;
-            }
-        }
-        if (dividend < 0) {
-            if (divisor > 0) {
-                int i = 0;
-                while (dividend >= 0) {
-                    dividend = dividend + divisor;
-                    i++;
-                }
-                return -(i-1);
-            }
-            if (divisor < 0) {
-                int i = 0;
-                while (dividend >= 0) {
-                    dividend = dividend - divisor;
-                    i++;
-                }
-                return i-1;
-            }
-        }
-        return 0;
+        return (A > 0) == (B > 0) ? res : -res;
     }
 
     public static void main(String[] args) {
         //2147483647
+        System.out.println((1 << 31) -1);
         System.out.println(Integer.MIN_VALUE);
+        System.out.println(divide(Integer.MIN_VALUE,2));
     }
 }

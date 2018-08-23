@@ -1,4 +1,4 @@
-package 其他.HeapSort;
+package 其他.sort.HeapSort;
 
 import java.util.Random;
 
